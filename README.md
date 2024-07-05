@@ -28,12 +28,14 @@ data_dir = pathlib.Path(data_dir)
 
 
 def download_and_unzip_dlib_model():  
+
     !wget http://dlib.net/files/mmod_human_face_detector.dat.bz2    
     !bzip2 -d mmod_human_face_detector.dat.bz2
 
 
 
 def detect_face(image_path):  
+
     image = io.imread(image_path)
     if image.ndim == 2:
         image = color.gray2rgb(image)
@@ -49,6 +51,7 @@ def detect_face(image_path):
 
 
 def generate_new_image():
+
     !python generate.py --pretrained-params pretrained_params_on_celebA.h5 --config pretrained_conf_on_celebA.json --test-image-path source_img
     generated_img = sorted(glob.glob(os.path.join("tmp.results/*.png")), key=os.path.getmtime)[-1]
     return generated_img
