@@ -23,12 +23,15 @@ data_dir = pathlib.Path(data_dir)
 %cd nnabla-examples/image-translation/stargan
 
 !wget https://nnabla.org/pretrained-models/nnabla-examples/GANs/stargan/pretrained_params_on_celebA.h5
+
 !wget https://nnabla.org/pretrained-models/nnabla-examples/GANs/stargan/pretrained_conf_on_celebA.json
 
+
 def download_and_unzip_dlib_model():  
-    !wget http://dlib.net/files/mmod_human_face_detector.dat.bz2
-    
+    !wget http://dlib.net/files/mmod_human_face_detector.dat.bz2    
     !bzip2 -d mmod_human_face_detector.dat.bz2
+
+
 
 def detect_face(image_path):  
     image = io.imread(image_path)
@@ -42,6 +45,8 @@ def detect_face(image_path):
     assert len(detected_faces) == 1, "Warning: only one face should be contained."
     detected_faces = detected_faces[0]
     return detected_faces, image
+
+
 
 def generate_new_image():
     !python generate.py --pretrained-params pretrained_params_on_celebA.h5 --config pretrained_conf_on_celebA.json --test-image-path source_img
