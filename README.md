@@ -12,6 +12,7 @@ data_dir = tf.keras.utils.get_file(origin=dataset_url,
 data_dir = pathlib.Path(data_dir)
 
 3)starGAN
+
 !pip install nnabla-ext-cuda120  
 !git clone https://github.com/sony/nnabla-examples.git
 
