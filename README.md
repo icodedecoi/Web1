@@ -19,6 +19,7 @@ data_dir = pathlib.Path(data_dir)
 !wget -O /content/man.png https://raw.githubusercontent.com/Lilcob/test_colab/main/man.png
 
 %run nnabla-examples/interactive-demos/colab_utils.py
+
 %cd nnabla-examples/image-translation/stargan
 
 !wget https://nnabla.org/pretrained-models/nnabla-examples/GANs/stargan/pretrained_params_on_celebA.h5
