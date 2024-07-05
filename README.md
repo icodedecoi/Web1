@@ -27,6 +27,7 @@ data_dir = pathlib.Path(data_dir)
 
 def download_and_unzip_dlib_model():  
     !wget http://dlib.net/files/mmod_human_face_detector.dat.bz2
+    
     !bzip2 -d mmod_human_face_detector.dat.bz2
 
 def detect_face(image_path):  
